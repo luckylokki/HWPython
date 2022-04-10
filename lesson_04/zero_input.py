@@ -1,6 +1,6 @@
 print('"Последовательности целых чисел"')
-n = int(input('Введите целое число: '))
-num=0
+n = 1
+num = 0
 max = min = n
 evn = 0
 nevn = 0
@@ -9,16 +9,17 @@ while n != 0:
     n = int(input('Введите целое число: '))
     num += 1
     ttl = ttl + n
+    print(n, end=' ')
+    if n%2 == 0:
+        evn += 1
+    elif n%2 != 0:
+        nevn += 1
     if n > max:
         max = n
     elif n < min and n != 0:
         min = n
-    if (n % 2) == 0:
-        evn += 1
-    else:
-        nevn += 1
 print('"Вы остановили программу введя 0"')
-print('Всего вы ввели :', num, 'чисел не считая 0')
+print('Всего вы ввели :', num-1, 'чисел не считая 0')
 print('Общая сумма введеных чисел:', ttl)
 print('Среднее арифметическое целочисленное:', ttl//num)
 print('Среднее арифметическое:', ttl/num)
