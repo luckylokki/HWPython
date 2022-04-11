@@ -11,5 +11,3 @@ else:
         cnt += 1
         if dgr <= n and dgr*2 >= n:
             print(n, '\t', cnt, dgr, '\t2 **', cnt, '=', dgr)
-
-
