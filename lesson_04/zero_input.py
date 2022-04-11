@@ -1,8 +1,7 @@
 print('"Последовательности целых чисел"')
 sml = lrg = 0
+evn = odd = 0
 num = 0
-evn = 0
-nevn = 0
 ttl = 0
 while True:
     n = int(input('Введите целое число: '))
@@ -14,7 +13,7 @@ while True:
     if n%2 == 0:
         evn += 1
     else:
-        nevn += 1
+        odd += 1
 
     if num == 1:
         sml = n
@@ -32,5 +31,5 @@ print('Среднее арифметическое:', ttl/num)
 print('Минимальное число:', sml)
 print('Максимальное число:', lrg)
 print('Количество четных чисел:', evn)
-print('Количество не четных чисел:', nevn)
+print('Количество не четных чисел:', odd)
 
