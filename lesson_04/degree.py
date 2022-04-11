@@ -6,6 +6,6 @@ else:
     dgr = 2
     cnt = 0
     while dgr <= n:
-        dgr *=2
-        cnt +=1
-    print(n,'\t', cnt, dgr//2, '\t2 **', cnt,'=', dgr//2)
+        dgr *= 2
+        cnt += 1
+    print(n, '\t', cnt, dgr // 2, '\t2 **', cnt, '=', dgr // 2)
