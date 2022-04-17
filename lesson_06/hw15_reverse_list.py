@@ -1,5 +1,6 @@
+from random import randint
 print('ДЗ 15. Развернуть список.')
-lst = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+lst = [randint(0, 99) for _ in range(10)]
 cnt = -1
 print('Стартовый список:', lst)
 for i in range(len(lst) // 2):
