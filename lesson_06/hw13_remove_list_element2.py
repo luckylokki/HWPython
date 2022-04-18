@@ -9,9 +9,7 @@ if k > len(num_lst) or k < 0:
     print('Введеный индекс выходит за границы списка, попробуйте еще раз')
 else:
     fnd_idx = num_lst[k]
-    for i in range(k, len(num_lst) - 1):
-        num_lst[i] = num_lst[i + 1]
+    num_lst, num_lst = num_lst.append(num_lst[k]), num_lst[:k] + num_lst[k + 1:]
     num_lst.pop()
     print('Список со сдвигом влево, и удаленным элементом с индексом', k, 'со значением', fnd_idx)
     print('Реузльтат:', num_lst, type(num_lst))
-
