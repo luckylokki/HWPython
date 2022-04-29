@@ -1,7 +1,6 @@
-#Введите текст через input или раскомментируйте заготовленную строку, а input закомментир
 print('ДЗ 18. Задача на словари 2:')
-new_str =  input('Введите строку на английском: ')
-# new_str = 'A Long Time Ago In A Galaxy Far Far Away test test A'
+# new_str =  input('Введите строку на английском: ')
+new_str = 'A Long Time Ago In A Galaxy Far Far Away test test A'
 print('Дана строка: \n' + new_str)
 d = {}
 lst = []
