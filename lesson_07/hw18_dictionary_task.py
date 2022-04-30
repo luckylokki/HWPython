@@ -10,4 +10,4 @@ for word in new_str.split():
 for i in d.items():
     if i[1] == max(d.values()):
         lst = list(i)
-print('\nВ вашей строке чаше всего встречается слово "' + str(lst[0])+ '"')
+print('\nВ вашей строке чаше всего встречается слово "' + str(lst[0]) + '"')
