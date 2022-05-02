@@ -2,7 +2,7 @@ print('ДЗ 19. Функция square')
 
 
 def square(line_square):
-    result = line_square * 4, line_square ** 2, (2 * line_square ** 2) ** .5
+    result = line_square * 4, line_square ** 2, line_square * 2**(1/2)
     return result
 
 
