@@ -15,4 +15,4 @@ books = \
 print('Список заказов: ')
 print('\n'.join(map(str, books)))
 print('\nРезультат решения задачи: ')
-print(list(map(lambda ord: ord if ord[1] >= 100 else (ord[0], ord[1] + 10), map(lambda ord: (ord[0], round(ord[2] * ord[3], 2)), books))))
+print(list(map(lambda ord: ord if ord[1] > 100 else (ord[0], ord[1] + 10), map(lambda ord: (ord[0], round(ord[2] * ord[3], 2)), books))))
