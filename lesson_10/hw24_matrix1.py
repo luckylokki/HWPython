@@ -30,7 +30,7 @@ def sortm(matr):
     return matr
 
 
-def print_matrix(matr):
+def print_matrix(matrs):
     sum_cols = [0] * size
     for i in range(size):
         for j in range(size):
