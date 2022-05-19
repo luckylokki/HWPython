@@ -1,6 +1,5 @@
 rows = int(input('Введите высоту треугольника: '))
 def triangle(size):
-    draw_char = '*'
-    for rows in range(size + 1):
-        print(' ' * (size - rows) + draw_char * (2 * rows -1))
+    for row in range(size + 1):
+        print(' ' * (size - row) + '*' * (2 * row -1))
 triangle(rows)

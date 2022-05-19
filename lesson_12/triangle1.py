@@ -1,14 +1,11 @@
-row = int(input('Enter number of rows required: '))
-
+print('ДЗ 27. Треугольник 1')
+rows = int(input('Введите высоту треугольника: '))
 def triangle(size):
-    for i in range(size):
-        for j in range(size - i):
-            print(' ', end='')  # printing space required and staying in same line
-
-        for j in range(2 * i + 1):
-            if j == 0 or j == 2 * i or i == size - 1:
-                print('*', end='')
+    for row in range(1,rows+1):
+        for col in range(1,2*rows):
+            if row == rows or row+col == rows+1 or col-row== rows-1:
+                print('*',end=' ')
             else:
-                print(' ', end='')
-        print()  # printing new line
-triangle(row)
+                print(end='  ')
+        print()
+triangle(rows)
