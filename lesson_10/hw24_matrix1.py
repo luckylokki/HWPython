@@ -3,13 +3,14 @@ import random
 print('ДЗ 24. Матрица 1')
 
 size = int(input('Введите размер матрицы: '))
-matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
 
-def sort_matrix(matr):
-    suma = [0 for i in range(size)]
-    for y in range(len(matrix)):
-        suma = [suma[index] + i for index, i in enumerate(matrix[y])]
 
+def sortm(matr):
+    suma = [0] * size
+    for i in range(size):
+        lst = []
+        for j in range(size):
+            suma[j] += matrix[i][j]
     for i in range(len(suma) - 1):
         for j in range(len(suma) - i - 1):
             if suma[j] > suma[j + 1]:
@@ -30,17 +31,26 @@ def sort_matrix(matr):
 
 
 def print_matrix(matr):
-    suma = [0 for i in range(size)]
-    for y in range(len(matrix)):
-        suma = [suma[index] + i for index, i in enumerate(matrix[y])]
-        for x in matrix[y]:
-            print('{:>3}'.format(x), end='  ')
+    sum_cols = [0] * size
+    for i in range(size):
+        for j in range(size):
+            sum_cols[j] += matrix[i][j]
+            print('{:>3}'.format(matrix[i][j]), end=' ')
         print('')
-    for x in suma:
-        print('{:<5}'.format(x), end='')
+    for i in range(len(sum_cols)):
+        print('{:>3}'.format(sum_cols[i]), end=' ')
     print()
     return None
+while True:
+    if size<=5:
+        print('Ошибка. Число должно быть больше 5')
+        size = int(input('Введите размер матрицы: '))
+    else:
 
-print_matrix(matrix)
-print()
-print_matrix(sort_matrix(matrix))
+        matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
+        print('Матрица не отсортированная: ')
+        print_matrix(matrix)
+        print()
+        print('Матрица отсортированная: ')
+        print_matrix(sortm(matrix))
+        break
