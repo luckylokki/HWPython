@@ -5,6 +5,19 @@ print('ДЗ 24. Матрица 1')
 size = int(input('Введите размер матрицы: '))
 
 
+def print_matrix(matrs):
+    sum_cols = [0] * size
+    for i in range(size):
+        for j in range(size):
+            sum_cols[j] += matrix[i][j]
+            print('{:>3}'.format(matrix[i][j]), end=' ')
+        print('')
+    for i in range(len(sum_cols)):
+        print('{:>3}'.format(sum_cols[i]), end=' ')
+    print()
+    return None
+
+
 def sortm(matr):
     suma = [0] * size
     for i in range(size):
@@ -30,19 +43,8 @@ def sortm(matr):
     return matr
 
 
-def print_matrix(matrs):
-    sum_cols = [0] * size
-    for i in range(size):
-        for j in range(size):
-            sum_cols[j] += matrix[i][j]
-            print('{:>3}'.format(matrix[i][j]), end=' ')
-        print('')
-    for i in range(len(sum_cols)):
-        print('{:>3}'.format(sum_cols[i]), end=' ')
-    print()
-    return None
 while True:
-    if size<=5:
+    if size <= 5:
         print('Ошибка. Число должно быть больше 5')
         size = int(input('Введите размер матрицы: '))
     else:
