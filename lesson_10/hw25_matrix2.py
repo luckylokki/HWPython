@@ -3,7 +3,7 @@ print('ДЗ 25. Матрица 2')
 
 rows = int(input('Количество строк: '))
 cols = int(input('Количество столбцов: '))
-matrix = [[randint(10, 99) for j in range(cols)] for i in range(rows)]
+matrix = [[randint(10, 50) for j in range(cols)] for i in range(rows)]
 sum_cols = [0] * cols
 for i in range(rows):
     sum_rows = 0
