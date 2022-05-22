@@ -1,4 +1,5 @@
 from random import randint
+
 print('ДЗ 25. Матрица 2')
 
 rows = int(input('Количество строк: '))
@@ -11,8 +12,8 @@ for i in range(rows):
     for j in range(cols):
         sum_rows += matrix[i][j]
         sum_cols[j] += matrix[i][j]
-        lst.append(str(matrix[i][j]))
-    print('{matr:>{x}}{su:>10}'.format(matr='  '.join(lst), su=sum_rows, x=cols * 4-1))
+        print('{matr:>3}'.format(matr=matrix[i][j]), end=' ')
+    print('{su:>8}'.format(su=sum_rows))
 
 for i in range(len(sum_cols)):
     print('{:>3}'.format(sum_cols[i]), end=' ')
