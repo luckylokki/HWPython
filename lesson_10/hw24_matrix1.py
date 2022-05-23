@@ -43,16 +43,14 @@ def sortm(matr):
     return matr
 
 
-while True:
-    if size <= 5:
-        print('Ошибка. Число должно быть больше 5')
-        size = int(input('Введите размер матрицы: '))
-    else:
+while size <= 5:
+    print('Ошибка. Число должно быть больше 5')
+    size = int(input('Введите размер матрицы: '))
+else:
+    matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
+    print('Матрица не отсортированная: ')
+    print_matrix(matrix)
+    print()
+    print('Матрица отсортированная: ')
+    print_matrix(sortm(matrix))
 
-        matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
-        print('Матрица не отсортированная: ')
-        print_matrix(matrix)
-        print()
-        print('Матрица отсортированная: ')
-        print_matrix(sortm(matrix))
-        break
