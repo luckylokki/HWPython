@@ -1,8 +1,7 @@
 import random
 
 print('ДЗ 24. Матрица 1')
-
-size = int(input('Введите размер матрицы: '))
+size = 0
 
 
 def print_matrix(matrs):
@@ -44,9 +43,12 @@ def sortm(matr):
 
 
 while size <= 5:
-    print('Ошибка. Число должно быть больше 5')
-    size = int(input('Введите размер матрицы: '))
 
+    try:
+        size = int(input('Введите размер матрицы: '))
+    except:
+        print('Ошибка. Число должно быть целым')
+    print('Ошибка. Число должно быть больше 5')
 matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
 print('Матрица не отсортированная: ')
 print_matrix(matrix)
