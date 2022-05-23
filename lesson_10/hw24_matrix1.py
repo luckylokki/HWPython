@@ -42,16 +42,18 @@ def sortm(matr):
     return matr
 
 
-while size <= 5:
-
+while True:
     try:
         size = int(input('Введите целое, положительное число, больше 5: '))
+        if size <= 5 :
+            print('Ошибка. Число должно быть больше 5')
+        else:
+            matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
+            print('Матрица не отсортированная: ')
+            print_matrix(matrix)
+            print()
+            print('Матрица отсортированная: ')
+            print_matrix(sortm(matrix))
+            break
     except:
         print('Ошибка. Число должно быть целым')
-    print('Ошибка. Число должно быть больше 5')
-matrix = [[random.randint(1, 50) for i in range(size)] for y in range(size)]
-print('Матрица не отсортированная: ')
-print_matrix(matrix)
-print()
-print('Матрица отсортированная: ')
-print_matrix(sortm(matrix))
