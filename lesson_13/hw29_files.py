@@ -7,6 +7,7 @@ new_file = open('src_14_new.txt', 'w')
 print('Список учащихся, чей средний балл меньше 5:\n')
 count = 0
 avr_tt = 0
+aver_print = 0
 for lines_cred in students:
     count += 1
     data_cred = lines_cred.split(' ')
@@ -17,6 +18,7 @@ for lines_cred in students:
     new_file.write('{shurn_n:<20}{avrg:.4}\n'.format(shurn_n=shurname_name, avrg=average))
     average_total = (int(sum(int(x) for x in lines_cred.split(' ')[2:])))
     avr_tt += average_total
+    aver_print =round(avr_tt / len(lines_cred.split(' ')[2:]) / count, 2)
 print()
-print('Средний бал по классу:', round(avr_tt / len(lines_cred.split(' ')[2:]) / count, 2))
+print('Средний бал по классу:', aver_print)
 new_file.close()
