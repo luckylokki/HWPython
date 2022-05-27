@@ -15,25 +15,31 @@ class Counter:
     def condition(self):
         if self.start < self.end:
             self.start += 1
-            return self.start
-        else:
-            return 'Out of range'
+        return self.start
 
 print('ДЗ 30. Цифровой счётчик\n')
+print('Введите минимальное или максимальное значение счетчика\nЕсли хотите \
+воспользоватся стандартным значением просто нажмите Enter')
+print()
 
-a = input("Please, enter start: ")
-b = input("Please, enter end: ")
+start_num = input("Введите минимальное значение счетчика: ")
+end_num = input("Введите максимальное значение счетчика: ")
+
 cnt = Counter()
-if a == '':
-    a = cnt.start
-else:
-    a = int(a)-1
-if b == '':
-    b = cnt.end
-else:
-    b = int(b)
 
-data = Counter(start=a, end=b)
-# print(a)
-for i in range(a, b):
+if start_num == '':
+    start_num = cnt.start
+else:
+    start_num = int(start_num)-1
+if end_num == '':
+    end_num = cnt.end
+else:
+    end_num = int(end_num)
+
+if start_num > end_num:
+	print('Стартовое число не может быть меньше финального')
+
+data = Counter(start=start_num, end=end_num)
+
+for i in range(start_num, end_num):
     print(data.condition())
