@@ -24,7 +24,7 @@ print('ДЗ 30. Цифровой счётчик')
 print('Если хотите использовать значение по-умолчанию - просто нажмите Enter\n')
 min_cnt = input("Введите минимальное значение счетчика: ")
 max_cnt = input("Введите максимальное значение счетчика: ")
-strt_cnt = input("Введите начальное значение счетчика: ")
+start_cnt = input("Введите начальное значение счетчика: ")
 cnt = Counter()
 
 if min_cnt == '':
@@ -35,15 +35,15 @@ if max_cnt == '':
     max_cnt = cnt.end
 else:
     max_cnt = int(max_cnt)
-if strt_cnt == '':
-    strt_cnt = cnt.current
+if start_cnt == '':
+    start_cnt = cnt.current
 else:
-    strt_cnt = int(strt_cnt)
+    start_cnt = int(start_cnt)
 
-cnt = Counter(start=min_cnt, end=max_cnt, current=strt_cnt)
+cnt = Counter(start=min_cnt, end=max_cnt, current=start_cnt)
 
-if min_cnt >= max_cnt:
-    print('Конечное значение не может быть больше стартового')
+if min_cnt >= max_cnt or start_cnt >= max_cnt:
+    print('Конечное или стартовое значение не может быть больше стартового')
 else:
     for _ in range(min_cnt,max_cnt):
         cnt.increase()
