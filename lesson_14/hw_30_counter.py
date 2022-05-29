@@ -8,7 +8,7 @@ class Counter:
         else:
             self.current = current
 
-    def condition(self):
+    def increase(self):
         self.current += 1
         if self.current >= self.end:
             self.current = self.start
@@ -46,7 +46,7 @@ if min_cnt >= max_cnt:
     print('Конечное значение не может быть больше стартового')
 else:
     for _ in range(min_cnt,max_cnt):
-        print(cnt.condition())
+        cnt.increase()
     print()
     print('Текущие значение счетчика: ')
     print(cnt.get_current_value())
