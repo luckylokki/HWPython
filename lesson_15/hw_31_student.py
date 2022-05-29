@@ -28,14 +28,6 @@ class Student:
             g=', '.join(str(grade) for grade in self.grades)
         )
 
-
-# s1 = Student('Tom', 25)
-# lst = [6, 7, 3, 6, 9, 12]
-# s1.grades = lst
-# print(s1)
-# del lst
-# print(s1)
-
 class Group:
     def __init__(self, name):
         self.__name = name
