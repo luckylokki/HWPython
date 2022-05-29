@@ -15,9 +15,9 @@ class Counter:
 
 
 if __name__ == '__main__':
-    counter = Counter(3, 100)
+    counter = Counter(0, 100)
     print(counter)
-    for _ in range(97):
+    for _ in range(120):
         counter.increment()
         print(counter.current)
     print('Check resetting')

@@ -6,9 +6,13 @@ class Counter:
         self.current = start
 
     def condition(self):
-        if self.current < self.end
-            self.current += 1
+        self.current += 1
+        if self.current >= self.end:
+            self.current = self.start
         return self.current
+
+    # def set_current(self, curr):
+
 
     def get_current_value(self):
         return self.current
@@ -22,7 +26,7 @@ cnt = Counter()
 if a == '':
     a = cnt.start
 else:
-    a = int(a)-1
+    a = int(a)
 if b == '':
     b = cnt.end
 else:
@@ -33,7 +37,7 @@ cnt = Counter(start=a, end=b)
 if a >= b:
     print('Конечное значение не может быть больше стартового')
 else:
-    for i in range(a, b):
+    for _ in range(a,b):
         print(cnt.condition())
     print()
     print('Текущие значение счетчика: ')
