@@ -1,27 +1,24 @@
-'''
-Реализовать класс цифрового счетчика. В классе реализовать методы:
-установки максимального, минимального и начального значения счётчика (предусмотреть установку счётчика значениями по умолчанию 0-100)
-увеличения счетчика на 1
-возвращения текущего значения счётчика
-'''
 class Counter:
 
-    def __init__(self, start=-1, end=100):
+    def __init__(self, start=0, end=100, current=None):
         self.start = start
         self.end = end
+        self.current = start
 
     def condition(self):
-        if self.start < self.end:
-            self.start += 1
-            return self.start
-        else:
-            return 'Out of range'
+        if self.current < self.end
+            self.current += 1
+        return self.current
 
-print('ДЗ 30. Цифровой счётчик\n')
+    def get_current_value(self):
+        return self.current
 
-a = input("Please, enter start: ")
-b = input("Please, enter end: ")
+print('ДЗ 30. Цифровой счётчик')
+print('Если хотите использовать значение по-умолчанию - просто нажмите Enter\n')
+a = input("Введите стартовое значение счетчика: ")
+b = input("Введите финальное значение счетчика: ")
 cnt = Counter()
+
 if a == '':
     a = cnt.start
 else:
@@ -31,7 +28,13 @@ if b == '':
 else:
     b = int(b)
 
-count = Counter(start=a, end=b)
-# print(a)
-for i in range(a, b):
-    print(count.condition())
+cnt = Counter(start=a, end=b)
+
+if a >= b:
+    print('Конечное значение не может быть больше стартового')
+else:
+    for i in range(a, b):
+        print(cnt.condition())
+    print()
+    print('Текущие значение счетчика: ')
+    print(cnt.get_current_value())
