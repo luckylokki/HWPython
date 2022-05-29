@@ -3,7 +3,10 @@ class Counter:
     def __init__(self, start=0, end=100, current=None):
         self.start = start
         self.end = end
-        self.current = start
+        if not current:
+            self.current = start
+        else:
+            self.current = current
 
     def condition(self):
         self.current += 1
@@ -19,25 +22,30 @@ class Counter:
 
 print('ДЗ 30. Цифровой счётчик')
 print('Если хотите использовать значение по-умолчанию - просто нажмите Enter\n')
-a = input("Введите стартовое значение счетчика: ")
-b = input("Введите финальное значение счетчика: ")
+min_cnt = input("Введите минимальное значение счетчика: ")
+max_cnt = input("Введите максимальное значение счетчика: ")
+strt_cnt = input("Введите начальное значение счетчика: ")
 cnt = Counter()
 
-if a == '':
-    a = cnt.start
+if min_cnt == '':
+    min_cnt = cnt.start
 else:
-    a = int(a)
-if b == '':
-    b = cnt.end
+    min_cnt = int(min_cnt)
+if max_cnt == '':
+    max_cnt = cnt.end
 else:
-    b = int(b)
+    max_cnt = int(max_cnt)
+if strt_cnt == '':
+    strt_cnt = cnt.current
+else:
+    strt_cnt = int(strt_cnt)
 
-cnt = Counter(start=a, end=b)
+cnt = Counter(start=min_cnt, end=max_cnt, current=strt_cnt)
 
-if a >= b:
+if min_cnt >= max_cnt:
     print('Конечное значение не может быть больше стартового')
 else:
-    for _ in range(a,b):
+    for _ in range(min_cnt,max_cnt):
         print(cnt.condition())
     print()
     print('Текущие значение счетчика: ')
