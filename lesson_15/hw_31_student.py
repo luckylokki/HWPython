@@ -13,9 +13,9 @@ class Student:
         return self.grades
 
     def __str__(self):
-        return 'Студент: {n}, Оценки: {g}'.format(
+        return 'Студент: {n:<10} Оценки: {g}'.format(
             n=self.name,
-            g=', '.join(str(grade) for grade in self.grades)
+            g=' '.join(str(grade) for grade in self.grades)
         )
 
 
@@ -37,12 +37,11 @@ class Group:
 
 
 students_amount = int(input('Сколько студентов вы хотите добавить?\n'))
-st_v_c = {}
 gr = Group(input('Введите имя группы: '))
 for x in range(1, students_amount + 1):
-    st_v_c["stc{0}".format(x)] = Student(input(f'Введите имя {x} студента: '))
+    st= Student(input(f'Введите имя {x} студента: '))
     for _ in range(10):
-        st_v_c["stc{0}".format(x)].add_grade(randint(1, 10))
-    gr.add_student(st_v_c["stc{0}".format(x)])
+        st.add_grade(randint(1, 9))
+    gr.add_student(st)
 print()
 gr.print_group()
