@@ -14,11 +14,9 @@ class Counter:
             self.current = self.start
         return self.current
 
-    # def set_current(self, curr):
-
-
     def get_current_value(self):
         return self.current
+
 
 print('ДЗ 30. Цифровой счётчик')
 print('Если хотите использовать значение по-умолчанию - просто нажмите Enter\n')
@@ -45,7 +43,7 @@ cnt = Counter(start=min_cnt, end=max_cnt, current=start_cnt)
 if min_cnt >= max_cnt or start_cnt >= max_cnt:
     print('Конечное или стартовое значение не может быть больше стартового')
 else:
-    for _ in range(min_cnt,max_cnt):
+    for _ in range(min_cnt, max_cnt):
         cnt.increase()
     print()
     print('Текущие значение счетчика: ')
