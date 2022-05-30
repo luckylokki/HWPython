@@ -25,10 +25,10 @@ class Group:
         self.students = []
 
     def add_student(self, student):
-        temp = Student(student.name)
+        st = Student(student.name)
         for grade in student.get_grades():
-            temp.add_grade(grade)
-        self.students.append(temp)
+            st.add_grade(grade)
+        self.students.append(st)
 
     def print_group(self):
         print(f'Имя группы: {self.name}')
@@ -39,9 +39,9 @@ class Group:
 students_amount = int(input('Сколько студентов вы хотите добавить?\n'))
 gr = Group(input('Введите имя группы: '))
 for x in range(1, students_amount + 1):
-    st= Student(input(f'Введите имя {x} студента: '))
+    st_c = Student(input(f'Введите имя {x} студента: '))
     for _ in range(10):
-        st.add_grade(randint(1, 9))
-    gr.add_student(st)
+        st_c.add_grade(randint(1, 9))
+    gr.add_student(st_c)
 print()
 gr.print_group()
